@@ -1,0 +1,32 @@
+.content-category {
+    height: 100%;
+    flex-basis: 30%;
+    padding-left: 300px;
+    padding-right: 10px;       
+    padding-top: 40px;
+    border-right: 1px solid #E0E0E0;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1); 
+    transition: all 0.6s;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    position: relative;
+    
+
+
+
+   
+
+}
+@media (max-width: 700px) {
+    .content-category {
+        transition: all 0.6s;
+        width: 70%;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        position: absolute;
+        background-color: white;
+        height: 190vh;
+        z-index: 1000;
+    }
+}

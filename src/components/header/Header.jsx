@@ -5,9 +5,15 @@ import { GrTechnology } from 'react-icons/gr';
 import { MdClear } from 'react-icons/md';
 import { IoSearchOutline } from 'react-icons/io5';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import Item from '../items/item';
+import Category from '../list-category/category';
 
 const Header = () => {
     const [isFlexVisible, setFlexVisible] = useState(false);
+    const [showCategory, setShowCategory] = useState(false);
+    const handleBurgerClick = () => {
+        setShowCategory(!showCategory);
+    };
 
     const toggleFlex = () => {
         setFlexVisible(!isFlexVisible);
@@ -28,7 +34,7 @@ const Header = () => {
                         <GrTechnology />
                     </div>
                     <div className='forms'>
-                        <div className='burger-menu'>
+                        <div onClick={handleBurgerClick} className='burger-menu'>
                             <RxHamburgerMenu />
                         </div>
                         <input onChange={ShowIcon} value={flexInput} type='text' placeholder='Введите текст...' />
@@ -54,6 +60,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            {showCategory && <Category/>}
             {isFlexVisible && (
                 <div className='input-flex'>
                     <input onChange={ShowIcon} value={flexInput} type='text' placeholder='Введите текст...' />

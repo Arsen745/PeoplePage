@@ -1,0 +1,22 @@
+.items {
+    margin-bottom: 20px;
+    cursor: pointer;
+    padding: 5px 0px 5px 10px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    
+
+
+}
+.items:hover {
+    color: rgba(6, 10, 255, 0.705);
+    border-bottom: 1px solid rgba(6, 10, 255, 0.705);
+    border-top: 1px solid rgba(6, 10, 255, 0.705);
+}
+@media (max-width: 700px) {
+    .itemm{
+        /* display: none; */
+    }
+
+}

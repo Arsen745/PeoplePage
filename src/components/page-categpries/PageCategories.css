@@ -1,0 +1,161 @@
+.contentpage {
+    flex-basis: 70%;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-center {
+    padding: 30px 20px;
+
+    .slick-next::after {
+        color: blue;
+        width: 40px;
+        height: 40px;
+        border-top: 5px solid silver;
+        border-left: 5px solid silver;
+    }
+
+    .slick-arrow.slick-next {
+        width: 50px;
+    }
+
+    .slick-prev::after {
+        color: blue;
+        width: 40px;
+        height: 40px;
+        border-top: 5px solid silver;
+        border-left: 5px solid silver;
+    }
+
+    .slick-arrow.slick-prev {
+        width: 50px;
+    }
+}
+.content-bottom {
+    padding: 30px 20px;
+
+}
+
+.cardscenter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 300px;
+    height: 450px;
+    transition: all 0.4s;
+
+
+
+    .top-content {
+        width: 290px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 5px;
+        margin-bottom: 10px;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .bottom-content {
+        width: 290px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 200px;
+        justify-content: space-between;
+        word-break: break-all;
+        overflow: hidden;
+        span {
+            font-size: 14px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgb(131, 130, 130);
+            margin-right: 10px;
+        }
+
+        .name {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: rgb(36, 35, 35);
+
+        }
+
+        .model {
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            margin-bottom: 10px;
+            font-size: 13px;
+
+        }
+
+        .country {
+            font-size: 16px;
+        }
+
+        .button {
+            margin: auto;
+            margin-bottom: 0;
+
+            button {
+                padding: 5px 20px;
+                width: 290px;
+                font-size: 14px;
+
+                color: white;
+                background-color: rgba(6, 10, 255, 0.705);
+                border: none;
+                cursor: pointer;
+                transition: all 0.4s;
+
+                .icon-btn {
+                    margin-left: 10px;
+                }
+            }
+
+            button:hover {
+                background-color: rgba(0, 0, 128, 0.8);
+                box-shadow: 0 4px 8px rgba(6, 10, 255, 0.705);
+
+            }
+
+        }
+    }
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(6, 10, 255, 0.705);
+}
+.content-onas {
+    padding: 30px 20px;
+}
+
+
+
+
+@media (max-width: 700px) {
+    .contentpage {
+        flex-basis: 100%;
+    }
+}
