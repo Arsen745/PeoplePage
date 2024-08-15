@@ -84,6 +84,11 @@
             }
 
             .count-cart {
+                width: 25px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: absolute;
                 background-color: red;
                 padding: 2px 4px;

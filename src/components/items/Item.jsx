@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Item.css';
 
 const Item = (props) => {
-  const { setOpenCategory, text } = props;
-  const [ShowCategory, setShowCategory] = useState(text);
+  const { setOpenCategory, text, isActive } = props;
 
   return (
     <div className='itemm'>
-      <div onClick={() => {
-        alert(`${text.name}: ${text.category}`);
-        setOpenCategory(text.category);
-      }} className="items">
+      <div
+        onClick={() => {
+          setOpenCategory(text.category); 
+        }}
+        className={`items ${isActive ? 'clicked' : ''}`} 
+      >
         <a>{text.name}</a>
       </div>
     </div>

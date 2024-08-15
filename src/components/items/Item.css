@@ -9,6 +9,12 @@
 
 
 }
+.clicked {
+    color: rgba(6, 10, 255, 0.705);
+    border-bottom: 1px solid rgba(6, 10, 255, 0.705);
+    border-top: 1px solid rgba(6, 10, 255, 0.705);
+
+}
 .items:hover {
     color: rgba(6, 10, 255, 0.705);
     border-bottom: 1px solid rgba(6, 10, 255, 0.705);

@@ -3,6 +3,7 @@
     justify-content: space-between; 
     margin: auto;
     max-width: 1920px;
+    position: relative;
 }
 
 .page-categories {
@@ -26,11 +27,20 @@
 .page-categories::-webkit-scrollbar {
     width: 0;
 }
+.modal {
+    margin: auto;   
+    height: 100vh;
+    position: fixed;
+    max-width: 1920px;
+    top: 0;
+    z-index: 1000;
+
+}
 
 @media (max-width: 700px) {
-    .categories {
+    /* .categories {
         display: none; 
-    }
+    } */
     .page-categories {
         width: 100%;
         margin-top: 20px;

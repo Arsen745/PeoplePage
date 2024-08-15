@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Category.css';
 import Item from '../items/item';
 
-const Category = ({ GiveDataCategory }) => {
-  const [OpenCategory, setOpenCategory] = useState("");
+const Category = (props) => {
+    const {GiveDataCategory, setDataGiveSearch} = props;
+    const [openCategory, setOpenCategory] = useState(""); 
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
   const texts = [
     { name: "Пылесос", category: "VacuumCleaner" },
@@ -16,40 +18,50 @@ const Category = ({ GiveDataCategory }) => {
     { name: "Стейк машина", category: "Steik" },
     { name: "Вафельница", category: "Waffli" },
     { name: "Блендер", category: "Blender" },
-    { name: "Миксер", category: "Mixer" },
+    { name: "Миксер", category: "Mikser" },
     { name: "Вытяжка", category: "Vitishka" },
     { name: "Стиральная машина", category: "Washing" },
     { name: "Кондиционер", category: "Condis" },
-    { name: "Микроволновка", category: "Microwave" },
+    { name: "Микроволновка", category: "Microvol" },
     { name: "Духовка", category: "Oven" },
-    { name: "Газ плита", category: "Stove" },
+    { name: "Газ плита", category: "Plita" },
     { name: "Тепловентилятор", category: "Heater" },
     { name: "Кофеварка", category: "CoffeeMaker" },
     { name: "Фритюрница", category: "Fryer" },
-    { name: "Соковыжималка", category: "Juicer" },
+    { name: "Соковыжималка", category: "Socovij" },
     { name: "Электрическая мясорубка", category: "MeatGrinder" },
     { name: "Электрический плита", category: "ElectricStove" },
     { name: "Электрический чайник", category: "Kettle" },
-    { name: "Электрический нагреватель", category: "Heater" },
+    { name: "Электрический нагреватель", category: "Nagrevatel" },
     { name: "Встраиваемая техника", category: "BuiltIn" },
-    { name: "Отпариватель", category: "Steamer" },
+    { name: "Отпариватель", category: "Otparivatel" },
     { name: "Посудомоечная машина", category: "Dishwasher" }
   ];
+  useEffect(() => {
+    setDataGiveSearch(texts);
+}, [setDataGiveSearch]);
 
   useEffect(() => {
     if (typeof GiveDataCategory === 'function') {
-      GiveDataCategory(OpenCategory);
+      GiveDataCategory(openCategory); 
     }
-  }, [OpenCategory, GiveDataCategory]);
+  }, [openCategory, GiveDataCategory]);
+
   return (
     <div>
       <div className="content-category">
         {texts.map((el, index) => (
-          <Item key={index} text={el} setOpenCategory={setOpenCategory} />
+          <Item
+            key={index}
+            text={el}
+            setOpenCategory={setOpenCategory} 
+            isActive={selectedCategory === el.category} 
+          />
         ))}
       </div>
     </div>
   );
 }
+
 
 export default Category;
